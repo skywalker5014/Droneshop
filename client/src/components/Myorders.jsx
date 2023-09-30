@@ -6,6 +6,8 @@ import { url } from "../constants";
 
 function Myorders() {
   const [receipts, setReceipts] = useState([]);
+  const [userdata, setUser] = useState([]);
+  const [username, setusername] = useState('')
 
   useEffect(() => {
     async function fetchdata() {
@@ -15,16 +17,27 @@ function Myorders() {
             Authorization: localStorage.getItem("accessKey"),
           },
         })
-        .then((response) => setReceipts(response.data))
+        .then((response) => {
+          setReceipts(response.data.receipts)
+          setUser(response.data.user)
+        })
         .catch((error) => console.log(error));
     }
 
     fetchdata();
   }, []);
 
+
   return (
     <div>
       <Navbar />
+      <div>
+       <b> username: { userdata.length > 0 ? userdata[0].username : 'Loading...'} <br />
+       email: { userdata.length > 0 ? userdata[0].email : 'Loading...'} <br />
+       address:  { userdata.length > 0 ? userdata[0].address : 'Loading...'}<br />
+       contact:  { userdata.length > 0 ? userdata[0].contact_number : 'Loading...'}
+       </b>  
+      </div><br /><br />
       <div className="myordercontainer">
         <div className="receiptcontainer">
           {receipts.map((receipt, index) => (
@@ -39,7 +52,7 @@ function Myorders() {
           ))}
         </div>
       </div>
-
+ <button onClick={() => {console.log(userdata[0]['email']); setusername(userdata[0]['email'])}}>click</button>
       <Footer />
     </div>
   );
