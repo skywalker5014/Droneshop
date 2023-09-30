@@ -1,17 +1,18 @@
-import './App.css'
-import { Route, Routes } from 'react-router-dom';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
 import Product from "./components/Product";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Seller from './components/Seller';
-import Myorders from './components/Myorders';
-function App() {
+import Seller from "./components/Seller";
+import Myorders from "./components/Myorders";
 
+
+function App() {
   return (
     <>
-    <Routes>
+      <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/" element={<Login />} />
@@ -21,7 +22,7 @@ function App() {
         <Route path="/orders" element={<Myorders />} />
       </Routes>
     </>
-  )
+  );
 }
 
 export default App;

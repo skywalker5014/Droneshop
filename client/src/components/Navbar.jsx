@@ -4,8 +4,7 @@ function Navbar() {
   return (
     <>
       <nav>
-    <div className="navbox">
-
+        <div className="navbox">
           <div>
             <Link to="/home">Home</Link>
           </div>
@@ -16,12 +15,17 @@ function Navbar() {
             <Link to="/orders">Myorders</Link>
           </div>
           <div>
-          <Link to="/" onClick={() => {localStorage.removeItem('accessKey')}}>logout</Link>
+            <Link
+              to="/"
+              onClick={() => {
+                localStorage.removeItem("accessKey");
+              }}
+            >
+              logout
+            </Link>
           </div>
-      </div>
-
+        </div>
       </nav>
-
     </>
   );
 }

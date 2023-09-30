@@ -2,49 +2,47 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { url } from "../constants";
 
-function Myorders(){
+function Myorders() {
+  const [receipts, setReceipts] = useState([]);
 
-const [receipts, setReceipts] = useState([]);
-
-useEffect(()=> {
-    async function fetchdata(){
-           await axios.get('http://localhost:3000/api/orders',{
-                headers: {
-                    Authorization: localStorage.getItem('accessKey')
-                }
-            })
-            .then(response => setReceipts(response.data))
-            .catch(error => console.log(error))
+  useEffect(() => {
+    async function fetchdata() {
+      await axios
+        .get(url + "orders", {
+          headers: {
+            Authorization: localStorage.getItem("accessKey"),
+          },
+        })
+        .then((response) => setReceipts(response.data))
+        .catch((error) => console.log(error));
     }
 
-    fetchdata()
-},[])
+    fetchdata();
+  }, []);
 
-return(
-
+  return (
     <div>
-        <Navbar />
-        <div className="myordercontainer">
-            <div className="receiptcontainer">
-            {receipts.map((receipt, index) => (
+      <Navbar />
+      <div className="myordercontainer">
+        <div className="receiptcontainer">
+          {receipts.map((receipt, index) => (
             <div key={index} className="receiptcard">
-                <p>
+              <p>
                 order no: <b> {index + 1}</b> <br />
                 amount: <b> {receipt.amount} </b> <br />
                 order id:<b> {receipt.order_id} </b> <br />
                 payment id: <b>{receipt.payment_id}</b>
-                </p>
+              </p>
             </div>
-        ))}
-            </div>
+          ))}
         </div>
+      </div>
 
-<Footer />
+      <Footer />
     </div>
-)
-
-
+  );
 }
 
 export default Myorders;
