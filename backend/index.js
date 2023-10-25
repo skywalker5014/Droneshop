@@ -7,7 +7,7 @@ import routes from "./controller/routeController.js";
 const app = express();
 app.use(cors({
     origin: [
-        'http://localhost:8080',
+        'http://localhost:5252',
         'http://localhost:5173'
     ]
 }));
