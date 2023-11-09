@@ -72,7 +72,11 @@ function Login() {
           <a onClick={() => navigate("/register", { replace: true })}>
             {" "}
             register now!
-          </a>
+          </a>  
+        </div> <br /> <br />
+        <div>
+          test email: test@mail.com <br /> <br />
+          test password: 123123
         </div>
       </div>
     </>

@@ -1,11 +1,14 @@
 import mysql2 from 'mysql2';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const sql = mysql2.createConnection(
     {
-        database: 'droneshop',
-        host: 'localhost',
-        password: 'tintintin',
-        user: 'root'
+        database: process.env.sqldb,
+        host: process.env.sqlhost,
+        password: process.env.sqlpass,
+        user: process.env.sqlusr
     }
 )
 

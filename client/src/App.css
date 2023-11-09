@@ -104,7 +104,7 @@ right: 70px;
 }
 
 img {
-  float: left;
+  float: center;
   width:  150px;
   height: 150px;
   border-radius: 7px;

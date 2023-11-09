@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { url } from "../constants";
-// import axios from "axios";
 
 function Seller() {
   const [name, setname] = useState("");
@@ -29,16 +28,7 @@ function Seller() {
         console.log("sent");
       }
 
-      //    await axios.post('http://localhost:3000/seller/uploadProduct',{
-      //         formdata
-      //     },{headers: { "Content-Type": "multipart/form-data" }})
-      //     .then(response => {
-      //         if(response.status === 200){
-      //             alert('image uploaded')
-      //         } else {
-      //             alert('something went wrong try again')
-      //         }
-      //     })
+
     } catch (error) {
       alert("an error occured check the console for details");
       console.log(error);
