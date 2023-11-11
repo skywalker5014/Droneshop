@@ -294,16 +294,16 @@ img {
   
   .cartcontainer{
    border: 1px solid black;
-   height: 700px;
+   height: 42rem;
    overflow-y: scroll;
   }
 
- .cartbtn{
+ /* .cartbtn{
   background-color: rgb(249, 246, 246);
   width: 50px;
   color:rgb(176, 36, 36);
   
- }
+ } */
 
  .cartitembox{
   height: 520px;
@@ -315,14 +315,14 @@ img {
  }
   
   .carthandle{
-  position: absolute;
-  bottom: 120px;
-  right: 120px;
+   display: grid;
+  /* bottom: 120px; */
+  /* right: 120px; */
   }
 
   .cartbtnhandler{
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 55%);
   }
   
   img {
@@ -335,7 +335,7 @@ img {
   
   .homecontainer{
     /* display: grid; */
-    height: 700px;
+    height: 100%;
     /* grid-template-rows: repeat(3, 15%); */
     overflow-y: scroll;
 
@@ -373,7 +373,7 @@ img {
     row-gap: 20px;
     justify-content: center;
     justify-items: center;
-    height: 750px;
+    height: 100%;
     /* margin-bottom: 170px; */
   }
 
@@ -389,4 +389,10 @@ img {
     height: 600px;
     overflow-y: scroll;
   } */
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
 }

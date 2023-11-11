@@ -52,7 +52,6 @@ function Myorders() {
           ))}
         </div>
       </div>
- <button onClick={() => {console.log(userdata[0]['email']); setusername(userdata[0]['email'])}}>click</button>
       <Footer />
     </div>
   );

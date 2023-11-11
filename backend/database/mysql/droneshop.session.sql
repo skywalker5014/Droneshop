@@ -1,5 +1,5 @@
 create database droneshop;
-
+use droneshop;
 --@block
 create table users (
     username varchar(255),
@@ -26,4 +26,4 @@ create table cart (
     quantity int,
     Foreign Key (email) references users(email),
     Foreign Key (product_id) references products(product_id)
-)
+);

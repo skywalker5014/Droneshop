@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { url } from "../constants";
 
 function Login() {
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
+  const [Email, setEmail] = useState("test@mail.com");
+  const [Password, setPassword] = useState("123123");
   const [message, setmessage] = useState("");
   const navigate = useNavigate();
 
@@ -57,11 +57,13 @@ function Login() {
           <input
             type="text"
             placeholder="email"
+            value={Email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="password"
+            value={Password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button onClick={() => handleLogin()}>login</button>

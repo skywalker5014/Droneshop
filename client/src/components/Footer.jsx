@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "black", color: "white" }}>
+    <footer >
       <hr />
       &copy; Droneshop - developed by Sumukh Upadhya
     </footer>
