@@ -62,25 +62,23 @@ function Product() {
     <div>
       <Navbar />
       {/* <div style={{display: loading}}>image loading...</div> */}
-      <div className="productcontainer">
-        <div>
-          <img src={imageUrl} id="productimage" alt="image" /> <br />
-          <h3> product name: {product.product_name}</h3>
-          <br />
-          price: {product.price}
-          <br /> <br />
+      <div className="maincontainer">
+        <div className="productContainer">
+          <img src={imageUrl} alt="image" /> 
+          <h3> product name: {product.product_name} {''}
+          <button onClick={() => {
+            addtocart(product.product_id);
+            navigate("/cart", { replace: true });
+            }}>
+            add to cart
+          </button> 
+          <br /></h3>
+          price: {product.price} 
+          <br /> 
           <p>
             description: <br /> <b>{product.description}</b>
           </p>
         </div>
-        <button
-          onClick={() => {
-            addtocart(product.product_id);
-            navigate("/cart", { replace: true });
-          }}
-        >
-          cart
-        </button>
       </div>
       <Footer />
     </div>

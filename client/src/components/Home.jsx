@@ -77,19 +77,19 @@ function Home() {
         {message}
       </dialog>
       <Navbar />
-      <div className="homecontainer">
-        <div className="productsbox">
+      <div className="maincontainer">
+        <div className="homeContainer">
           {products.map((element, index) => (
-            <div key={element.product_id} className="productcard">
-              <img src={imageUrls[index]} alt="image" className="imageView" />
-              <Link to={`/product/${element.product_id}`}>
+            <div key={element.product_id} className="homeCards">
+            <Link to={`/product/${element.product_id}`}>
+              <img src={imageUrls[index]} alt="image"/> <br />
                 <b>{element.product_name}</b>
                 <br />
-              </Link>
-              {element.price} <br />
+              {element.price}
+            </Link>
             </div>
           ))}
-        </div>
+          </div>
       </div>
       <Footer />
     </div>

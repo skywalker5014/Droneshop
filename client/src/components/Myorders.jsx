@@ -7,7 +7,6 @@ import { url } from "../constants";
 function Myorders() {
   const [receipts, setReceipts] = useState([]);
   const [userdata, setUser] = useState([]);
-  const [username, setusername] = useState('')
 
   useEffect(() => {
     async function fetchdata() {
@@ -31,17 +30,17 @@ function Myorders() {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="maincontainer">
+      <div id="userDetails">
        <b> username: { userdata.length > 0 ? userdata[0].username : 'Loading...'} <br />
        email: { userdata.length > 0 ? userdata[0].email : 'Loading...'} <br />
        address:  { userdata.length > 0 ? userdata[0].address : 'Loading...'}<br />
        contact:  { userdata.length > 0 ? userdata[0].contact_number : 'Loading...'}
        </b>  
       </div><br /><br />
-      <div className="myordercontainer">
-        <div className="receiptcontainer">
+      <div className="myordersContainer">
           {receipts.map((receipt, index) => (
-            <div key={index} className="receiptcard">
+            <div key={index} className="orderReceipt">
               <p>
                 order no: <b> {index + 1}</b> <br />
                 amount: <b> {receipt.amount} </b> <br />
@@ -50,7 +49,7 @@ function Myorders() {
               </p>
             </div>
           ))}
-        </div>
+      </div>
       </div>
       <Footer />
     </div>

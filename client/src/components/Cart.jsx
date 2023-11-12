@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Order from "./Order";
 import Footer from "./Footer";
 import { url } from "../constants";
+import { Link } from "react-router-dom";
+
 
 function Cart() {
   const [cart, setCart] = useState([]);
@@ -76,7 +78,7 @@ function Cart() {
   return (
     <div>
       <Navbar />
-      <div className="cartcontainer">
+      <div className="maincontainer">
         <dialog id="dialog">
           cart is empty... <br />
           <a
@@ -86,15 +88,16 @@ function Cart() {
             go back to shopping!
           </a>
         </dialog>
-        <div className="cartitembox">
+        <div className="cartContainer">
           {cart.map((value, index) => (
-            <div key={index} className="cartitems">
+            <div key={index} className="cartItem">
+              <Link to={`/product/${value.product_id}`}>
               <b>{value.product_name}</b>
-              <br />
+              </Link>
               cost: {value.price} <br />
               quantity: &nbsp;
+              <div>
               <button
-                className="cartbtn"
                 onClick={() => cartquantity(value.product_id, "delete")}
               >
                 {" "}
@@ -102,22 +105,22 @@ function Cart() {
               </button>
               &nbsp;{value.quantity}&nbsp;
               <button
-                className="cartbtn"
                 onClick={() => cartquantity(value.product_id, "add")}
               >
                 {" "}
                 <b> +</b>
               </button>
+              </div>
             </div>
           ))}
         </div>
-        <div className="carthandle">
+        <div className="cartHandle">
           <hr />
           <b>Total cost: {total} </b>rupees <br />
           <br />
-          <div className="cartbtnhandler">
+          <div>
             <button className="cartbtn" onClick={() => resetcart()}>
-              reset
+              reset cart
             </button>
             <Order />
           </div>

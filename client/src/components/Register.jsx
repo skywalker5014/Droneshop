@@ -31,8 +31,9 @@ function Register() {
 
   return (
     <>
+      <h2>Project Droneshop: running on AWS </h2>
       <div className="maincontainer">
-        <div className="registercontainer">
+        <section>
           <form
             className="registerbox"
             onSubmit={() => navigate("/", { replace: true })}
@@ -73,8 +74,8 @@ function Register() {
           <div>
             already a user?{" "}
             <a onClick={() => navigate("/", { replace: true })}>Login</a>
-          </div>
         </div>
+        </section>
       </div>
     </>
   );

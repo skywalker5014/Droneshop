@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <>
       <nav>
-        <div className="navbox">
           <div>
             <Link to="/home">Home</Link>
           </div>
@@ -24,9 +22,7 @@ function Navbar() {
               logout
             </Link>
           </div>
-        </div>
       </nav>
-    </>
   );
 }
 

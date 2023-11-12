@@ -52,7 +52,9 @@ function Login() {
           close
         </a>
       </dialog>
+      <h2>Project Droneshop: running on AWS </h2>
       <div className="maincontainer">
+        <section>
         <div className="formbox">
           <input
             type="text"
@@ -76,10 +78,11 @@ function Login() {
             register now!
           </a>  
         </div> <br /> <br />
-        <div>
-          test email: test@mail.com <br /> <br />
-          test password: 123123
+        <div style={{border:"1px solid black", padding: '10px'}}>
+          A test account is loaded by default. <br />
+          Feel free to register
         </div>
+        </section>
       </div>
     </>
   );
