@@ -11,7 +11,7 @@ function verify(req, res, next){
             return res.status(403).json('<h1>user not authorized</h1>')
         } else {
             try {
-                const email = jwt.verify(tokenCheck,'69');
+                const email = jwt.verify(tokenCheck,'secret_key');
                 req.user = email
                 next();
             } catch (error) {
